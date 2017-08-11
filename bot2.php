@@ -41,10 +41,11 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   }else{
     $message = "Register Fail";
   }
+ $message='http://www.d-mtonline.com/shop/line/register_line.php?cid='.$afromuser[1].'&id='.$arrJson['events'][0]['source']['userId'];
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = $result;
+  $arrPostData['messages'][0]['text'] = $message;
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
