@@ -30,7 +30,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $ch = curl_init('http://www.d-mtonline.com/shop/line/register_line.php');
   //$param = '&id=
   curl_setopt($ch, CURLOPT_POST, 1);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, '&cid=999999999');
+  curl_setopt($ch, CURLOPT_POSTFIELDS, '?cid=999999999');
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   $result = curl_exec($ch);
  
