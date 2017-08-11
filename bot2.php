@@ -34,16 +34,11 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   $result = curl_exec($ch);
  
-  if($result == 'ok'){
-    $message = "Register OK";
-  }else{
-    $message = "Register Fail";
-  }
- $message='http://www.d-mtonline.com/shop/line/register_line.php?cid='.substr($arrJson['events'][0]['message']['text'],4).'&id='.$arrJson['events'][0]['source']['userId'];
+  //$message='http://www.d-mtonline.com/shop/line/register_line.php?cid='.substr($arrJson['events'][0]['message']['text'],4).'&id='.$arrJson['events'][0]['source']['userId'];
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = $message;
+  $arrPostData['messages'][0]['text'] = $result;
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
