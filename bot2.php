@@ -40,7 +40,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = $result;
 }else if($arrJson['events'][0]['message']['text'] == "verify"){
-  $ch = curl_init('http://www.d-mtonline.com/shop/line/register_line.php?id='.$arrJson['events'][0]['source']['userId']);
+  $ch = curl_init('http://www.d-mtonline.com/shop/line/register_line_test.php?id='.$arrJson['events'][0]['source']['userId']);
   //$param = '&id=
   curl_setopt($ch, CURLOPT_POST, 1);
   curl_setopt($ch, CURLOPT_POSTFIELDS, '');
