@@ -27,9 +27,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "ฉันทำอะไรไม่ได้เลย คุณต้องสอนฉันอีกเยอะ";
 }else if(substr($arrJson['events'][0]['message']['text'],0,3) == "reg"){
-  $fromuser  = "piece1 piece2 piece3 piece4 piece5 piece6";
-  $afromuser = explode(" ", $fromuseer);
-  $ch = curl_init('http://www.d-mtonline.com/shop/line/register_line.php?cid='.$afromuser[1].'&id='.$arrJson['events'][0]['source']['userId']);
+  $ch = curl_init('http://www.d-mtonline.com/shop/line/register_line.php?cid='.$arrJson['events'][0]['message']['text'],4).'&id='.$arrJson['events'][0]['source']['userId']);
   //$param = '&id=
   curl_setopt($ch, CURLOPT_POST, 1);
   curl_setopt($ch, CURLOPT_POSTFIELDS, '');
