@@ -88,6 +88,13 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = $result;
 }else{
+  $message = "วิธีการใช้งานมีคำสั่งดังนี้ \r\n".
+"- reg [รหัสบัตร] ใช้ในการลงทะเบียนเพื่อผูก Line กับ ID บัตรของสมาชิก\r\n".
+"เช่น reg 5215326548 \r\n".
+"- verify ใช้ตรวจสอบการผูก Line กับระบบว่าสำเสร็จหรือไม่\r\n".
+"- expried ใช้ในการตรวจสอบวันหมดอายุสมาชิก\r\n".
+"- trainer ใช้ในการตรวจสอบจำนวนครั้งเทรนเนอร์\r\n".
+"- point ใช้ในการตรวจสอบคะแนนของสมาชิก\r\n"
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
