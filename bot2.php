@@ -94,7 +94,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
 "- verify ใช้ตรวจสอบการผูก Line กับระบบว่าสำเสร็จหรือไม่\r\n".
 "- expried ใช้ในการตรวจสอบวันหมดอายุสมาชิก\r\n".
 "- trainer ใช้ในการตรวจสอบจำนวนครั้งเทรนเนอร์\r\n".
-"- point ใช้ในการตรวจสอบคะแนนของสมาชิก\r\n"
+"- point ใช้ในการตรวจสอบคะแนนของสมาชิก\r\n";
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
