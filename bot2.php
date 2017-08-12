@@ -47,7 +47,42 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   $result = curl_exec($ch);
  
-  //$message='http://www.d-mtonline.com/shop/line/register_line.php?cid='.substr($arrJson['events'][0]['message']['text'],4).'&id='.$arrJson['events'][0]['source']['userId'];
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = $result;
+}else if($arrJson['events'][0]['message']['text'] == "expried" or $arrJson['events'][0]['message']['text'] == "วันหมดอายุ"){
+  $ch = curl_init('http://www.d-mtonline.com/shop/line/register_line_command.php?id='.$arrJson['events'][0]['source']['userId'])."&cmd=expired;
+  //$param = '&id=
+  curl_setopt($ch, CURLOPT_POST, 1);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, '');
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $result = curl_exec($ch);
+ 
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = $result;
+}else if($arrJson['events'][0]['message']['text'] == "point" or $arrJson['events'][0]['message']['text'] == "คะแนน"){
+  $ch = curl_init('http://www.d-mtonline.com/shop/line/register_line_command.php?id='.$arrJson['events'][0]['source']['userId'])."&cmd=expired;
+  //$param = '&id=
+  curl_setopt($ch, CURLOPT_POST, 1);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, '');
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $result = curl_exec($ch);
+ 
+  $arrPostData = array();
+  $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
+  $arrPostData['messages'][0]['type'] = "text";
+  $arrPostData['messages'][0]['text'] = $result;
+}else if($arrJson['events'][0]['message']['text'] == "trainer" or $arrJson['events'][0]['message']['text'] == "เทรน"){
+  $ch = curl_init('http://www.d-mtonline.com/shop/line/register_line_command.php?id='.$arrJson['events'][0]['source']['userId'])."&cmd=expired;
+  //$param = '&id=
+  curl_setopt($ch, CURLOPT_POST, 1);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, '');
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $result = curl_exec($ch);
+ 
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
