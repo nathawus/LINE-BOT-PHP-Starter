@@ -51,7 +51,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = $result;
-}else if(($arrJson['events'][0]['message']['text'] == "expried") or ($arrJson['events'][0]['message']['text'] == "วันหมดอายุ")){
+}else if(($arrJson['events'][0]['message']['text'] == "expired") or ($arrJson['events'][0]['message']['text'] == "วันหมดอายุ")){
   $ch = curl_init('http://www.d-mtonline.com/shop/line/register_line_command.php?id='.$arrJson['events'][0]['source']['userId'].'&cmd=expired');
   //$param = '&id=
   curl_setopt($ch, CURLOPT_POST, 1);
