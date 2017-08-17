@@ -111,8 +111,9 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = $result;
-}else if(($arrJson['events'][0]['message']['text'] == "testtest")){
-  //$ch = curl_init('http://www.d-mtonline.com/shop/line/register_line_command.php?id='.$arrJson['events'][0]['source']['userId']."&cmd=status");
+}else if(($arrJson['events'][0]['message']['text'] == "test")){
+  $text_ex = explode(':', $text);
+  $ch = curl_init('http://api.wunderground.com/api/yourkey/forecast/lang:TH/q/Thailand/'.str_replace(' ', '%20', $text_ex[1]).'.json'));
   //$param = '&id=
   curl_setopt($ch, CURLOPT_POST, 1);
   curl_setopt($ch, CURLOPT_POSTFIELDS, '');
