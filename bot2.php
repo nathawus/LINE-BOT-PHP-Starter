@@ -123,9 +123,7 @@ if($arrJson['events'][0]['message']['text'] == "สวัสดี"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "abc";
-  $arrPostData['messages'][1]['type'] = "text";
-  $arrPostData['messages'][1]['text'] = "def";
+  $arrPostData['messages'][0]['text'] = $result;
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
